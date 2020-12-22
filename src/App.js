@@ -2,9 +2,9 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "./App.css";
 import { selectUser, login, logout } from "./features/userSlice";
-import IMessage from "./IMessage";
 import Login from "./Login";
 import { auth } from "./firebase";
+import Messenger from "./Messenger";
 
 function App() {
   const user = useSelector(selectUser);
@@ -29,7 +29,7 @@ function App() {
     });
   }, []);
 
-  return <div className="app">{user ? <IMessage /> : <Login />}</div>;
+  return <div className="app">{user ? <Messenger /> : <Login />}</div>;
 }
 
 export default App;

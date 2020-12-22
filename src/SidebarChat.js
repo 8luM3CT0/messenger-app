@@ -7,7 +7,7 @@ import db from './firebase'
 import * as timeago from 'timeago.js'
 
 
-function SidebarChat({id, chatName}) {
+function SidebarChat({id, chatName, selected}) {
     const dispatch = useDispatch();
     const [chatInfo, setChatInfo] = useState([]);
 
@@ -15,7 +15,7 @@ function SidebarChat({id, chatName}) {
         db.collection('chats')
         .doc(id)
         .collection('messages')
-        .orderBy('timestamp', 'desc')
+        .orderBy('timestamp', 'asc')
         .onSnapshot(snapshot => (
             setChatInfo(snapshot.docs.map(doc => doc.data()))
         ));
@@ -30,7 +30,7 @@ function SidebarChat({id, chatName}) {
                 })
         )
     } 
-    className="sidebarChat">
+    className={`sidebarChat ${selected && 'selected'}`}>
             <Avatar 
             src={chatInfo[0]?.photo} 
             className="sidebarChat__avatar" />

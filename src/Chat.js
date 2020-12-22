@@ -10,6 +10,19 @@ import firebase from 'firebase';
 import { selectUser } from './features/userSlice';
 import FlipMove from 'react-flip-move';
  
+import CallIcon from '@material-ui/icons/Call'
+import VideocamIcon from '@material-ui/icons/Videocam'
+import InfoIcon from '@material-ui/icons/Info'
+
+import AddCircleIcon from '@material-ui/icons/AddCircle';
+import GifIcon from '@material-ui/icons/Gif';
+import NoteAddIcon from '@material-ui/icons/NoteAdd';
+import InsertPhotoIcon from '@material-ui/icons/InsertPhoto';
+
+import EmojiEmotionsIcon from '@material-ui/icons/EmojiEmotions';
+import ThumbUpIcon from '@material-ui/icons/ThumbUp';
+
+
 
 function Chat() {
     const user = useSelector(selectUser);
@@ -23,7 +36,7 @@ function Chat() {
             db.collection('chats')
             .doc(chatId)
             .collection('messages')
-            .orderBy('timestamp', 'desc')
+            .orderBy('timestamp', 'asc')
             .onSnapshot(snapshot => (
                 setMessages(
                     snapshot.docs.map(doc => ({
@@ -49,13 +62,22 @@ function Chat() {
         setInput("");
       };
     
-
+//<h4>To: <span className="chat__span">{chatName}</span></h4>
     return (
         <div className="chat">
             <div className="chat__header">
-                <h4>To: <span className="chat__span">{chatName}</span></h4>
-                <strong>Details</strong>
+                <strong className="chat__span">{chatName}</strong>
+            <IconButton className="chat__btns1st">
+                        <CallIcon />
+                    </IconButton>
+                    <IconButton className="chat__btns">
+                        <VideocamIcon />
+                    </IconButton>
+                    <IconButton className="chat__btns">
+                        <InfoIcon />
+                    </IconButton>
             </div>
+           
 
             <div className="chat__message">
                 <FlipMove>
@@ -67,17 +89,23 @@ function Chat() {
 
             {/**chat input */}
             <div className="chat__input">
+                    <AddCircleIcon className="fter__icons__add" />
+                    <GifIcon className="fter__icons__gif" />
+                    <NoteAddIcon className="fter__icons__share" />
+                    <InsertPhotoIcon className="fter__icons__photo" />
+
                 <form>
                     <input 
                     value={input} 
                     onChange={(e) => setInput(e.target.value)} 
-                    placeholder="iMessage" 
+                    placeholder="Type a message..." 
                     type="text"
                     />
                     <button onClick={sendMessage}>Send Message</button>
                 </form>
-                <IconButton>
-                    <MicNoneIcon className="mic__icon" />
+                    <EmojiEmotionsIcon className="chat__emoji" />
+                <IconButton className="chat__btns">
+                    <ThumbUpIcon className="chat__thumbsUp" />
                 </IconButton>
             </div>
         </div>

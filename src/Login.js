@@ -11,11 +11,11 @@ function Login() {
         <div className="login">
             <div className="login__logo">
                 <img 
-                src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/a60c69b4-dbdc-49e3-b152-43bbdbfb0160/d6dy6qy-19e320f2-932f-4549-8050-2b7fb9289eda.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3sicGF0aCI6IlwvZlwvYTYwYzY5YjQtZGJkYy00OWUzLWIxNTItNDNiYmRiZmIwMTYwXC9kNmR5NnF5LTE5ZTMyMGYyLTkzMmYtNDU0OS04MDUwLTJiN2ZiOTI4OWVkYS5wbmcifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6ZmlsZS5kb3dubG9hZCJdfQ.AQSIo8n9g9HHLZFVdCwqbDOjFg9DwZI35LCTIuLgtEw" 
+                src="https://static.xx.fbcdn.net/rsrc.php/yd/r/hlvibnBVrEb.svg" 
                 alt=""/>
-                <h1>iMessage</h1>
+                <h1>Connect with your favorite people</h1>
+                <Button onClick={signIn}>Sign In</Button>
             </div>
-            <Button onClick={signIn}>Sign In</Button>
         </div>
     )
 }

@@ -5,19 +5,31 @@
     width: 100%;
 }
 
+.login__logo {
+    align-items: center;
+}
+
 .login__logo>img {
     object-fit: contain;
-    height: 150px;
+    height: 70px;
+    margin-left: 210px;
 }
 
-.login>button {
+.login__logo>h1 {
+    font-weight: 496;
+}
+
+.login__logo>button {
+    margin-top: 40px;
     width: 300px;
-    background-color: #3ea4fb;
+    background-color: #078afd;
     color: #eff2f5;
-    font-weight: 800;
+    font-weight: 400;
+    margin-left: 100px;
+    border-radius: 99px;
 }
 
-.login>button:hover {
+.login__logo>button:hover {
     background-color: gainsboro;
-    color: #3ea4fb;
+    color: #078afd;
 }

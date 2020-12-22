@@ -1,22 +1,20 @@
 .chat {
     display: flex;
     flex-direction: column;
-    flex: 0.65;
+    flex: 0.75;
     height: 100vh;
     background-color: white;
 }
 
 .chat__header {
-    padding: 20px;
+    /*padding: 20px;*/
     display: flex;
-    justify-content: space-between;
     border-bottom: 1px solid lightgray;
     background-color: #f5f5f5;
 }
 
-.chat__header>h4 {
-    font-weight: 500;
-    color: gray;
+.chat__header>strong {
+    padding: 10px;
 }
 
 .chat__span {
@@ -36,16 +34,25 @@
 }
 
 .chat__input>form>input {
-    width: 90%;
+    width: 100%;
     outline-width: 0;
-    border: 1ps solid lightgray;
+    border: 1px solid lightgray;
     border-radius: 99px;
     padding: 5px;
     outline-width: none;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
 }
 
 .chat__input>form>button {
     display: none;
+}
+
+.chat__emoji {
+    color: #078afd !important;
+    font-size: 30px !important;
+    cursor: pointer;
 }
 
 .chat__message {
@@ -60,4 +67,58 @@
 .chat__message {
     -ms-overflow-style: none;
     scrollbar-width: none;
+}
+
+.chat__btns1st {
+    margin-left: auto !important;
+    justify-content: end !important;
+    color: #078afd !important;
+}
+
+.chat__btns {
+    color: #078afd !important;
+    justify-content: end !important;
+}
+
+.chat__thumbsUp {
+    color: #078afd !important;
+    margin-right: auto !important;
+}
+
+.chat__btns__fter {
+    color: #f5f5f5 !important;
+    background-color: #078afd !important;
+    border-radius: 99px !important;
+    margin-right: 10px !important;
+}
+
+.fter__icons {
+    font-size: 30px !important;
+}
+
+.fter__icons__photo {
+    font-size: 30px !important;
+    color: #078afd !important;
+    cursor: pointer;
+}
+
+.fter__icons__add {
+    font-size: 30px !important;
+    color: #078afd !important;
+    margin-right: 10px !important;
+    cursor: pointer;
+}
+
+.fter__icons__gif {
+    font-size: 25px !important;
+    color: #078afd !important;
+    margin-right: 10px !important;
+    cursor: pointer;
+}
+
+.fter__icons__share {
+    font-size: 25px !important;
+    color: #078afd !important;
+    margin-right: 10px !important;
+    cursor: pointer;
 }

@@ -2,13 +2,13 @@
     display: flex;
     align-items: center;
     padding: 20px;
-    border: 1px solid lightgray;
     cursor: pointer;
 }
 
 .sidebarChat:hover {
-    background-color: #3e93fd;
-    color: white;
+    background-color: #fafafa;
+    color: black;
+    border-radius: 99px;
 }
 
 .sidebarChat__info {
@@ -17,8 +17,23 @@
     width: 100%;
 }
 
+.sidebarChat__info>h3 {
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.sidebarChat__info>p {
+    font-weight: 200;
+    font-size: 12px;
+}
+
 .sidebarChat__info>small {
     position: absolute;
     top: 5px;
     right: 0;
+    font-weight: 100;
+}
+
+.sidebarChat.selected {
+    background-color: gray !important;
 }

@@ -2,7 +2,10 @@ import { Avatar, IconButton } from "@material-ui/core";
 import React, { useEffect, useState } from "react";
 import "./Sidebar.css";
 import SearchIcon from "@material-ui/icons/Search";
-import RateReviewOutlinedIcon from "@material-ui/icons/RateReviewOutlined";
+//import RateReviewOutlinedIcon from "@material-ui/icons/RateReviewOutlined";
+import CreateIcon from '@material-ui/icons/Create'
+import SettingsIcon from '@material-ui/icons/Settings'
+import VideoCallIcon from '@material-ui/icons/VideoCall'
 import SidebarChat from "./SidebarChat";
 import { useSelector } from "react-redux";
 import { selectUser } from "./features/userSlice";
@@ -41,15 +44,22 @@ function Sidebar() {
           src={user.photo}
           className="sidebar__avatar"
         />
-        <div className="sidebar__input">
-          <SearchIcon />
-          <input placeholder="Search" />
-        </div>
-
-        <IconButton variant="outlined" className="sidebar__inputButton">
-          <RateReviewOutlinedIcon onClick={addChat} />
+        <h2>Chats</h2>
+        <IconButton className="sidebar__inputBtn1st">
+          <SettingsIcon className="sidebar__settingsIcon"  />
+        </IconButton>
+        <IconButton className="sidebar__inputBtn">
+          <VideoCallIcon className="sidebar__vidcallIcon" />
+        </IconButton>
+        <IconButton  className="sidebar__inputBtn">
+          <CreateIcon className="sidebar__createIcon" onClick={addChat} />
         </IconButton>
       </div>
+      <div className="sidebar__input">
+          <SearchIcon className="sidebar__search" />
+          <input placeholder="Search Messenger" />
+        </div>
+
 
       <div className="sidebar__chats">
         {chats.map(({ id, data: { chatName } }) => (
